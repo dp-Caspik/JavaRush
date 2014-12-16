@@ -3,8 +3,7 @@ package com.javarush.test.level07.lesson12.home03;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
+
 
 /* Максимальное и минимальное числа в массиве
 Создать массив на 20 чисел. Заполнить его числами с клавиатуры. Найти максимальное и минимальное числа в массиве.
@@ -20,10 +19,18 @@ public class Solution
         int  maximum;
         int  minimum;
 
-        //Напишите тут ваш код
+        int[] numbers = new int[20];
+        for (int i = 0; i < numbers.length; i++){
+            numbers[i] = Integer.parseInt(reader.readLine());
+        }
+        maximum = numbers[0];
+        minimum = numbers[0];
+        for (int number : numbers)
+        {
+            if (number >= maximum) maximum = number;
+            if (number <= minimum) minimum = number;
+        }
 
-
-        System.out.println(maximum);
-        System.out.println(minimum);
+        System.out.println(maximum + " " + minimum);
     }
 }
